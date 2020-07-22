@@ -1,0 +1,197 @@
+{
+	"name": "angular-ng",
+	"displayName": "Angular CLI Commands",
+	"description": "Run Angular ng commands within Visual Studio Code",
+	"version": "0.0.1",
+	"publisher": "ryannaddy",
+	"icon": "images/angularcli.png",
+	"engines": {
+		"vscode": "^1.47.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TheColorRed/vscode-angular-ng"
+	},
+	"bugs": {
+		"url": "https://github.com/TheColorRed/vscode-angular-ng/issues"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"Angular",
+		"JavaScript",
+		"ng",
+		"cli"
+	],
+	"activationEvents": [
+		"workspaceContains:**/angular.json"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "angular-ng.generate.component",
+				"title": "Ng: Generate Component"
+			},
+			{
+				"command": "angular-ng.generate.service",
+				"title": "Ng: Generate Service"
+			},
+			{
+				"command": "angular-ng.generate.directive",
+				"title": "Ng: Generate Directive"
+			},
+			{
+				"command": "angular-ng.generate.interceptor",
+				"title": "Ng: Generate Interceptor"
+			},
+			{
+				"command": "angular-ng.generate.interface",
+				"title": "Ng: Generate Interface"
+			},
+			{
+				"command": "angular-ng.generate.library",
+				"title": "Ng: Generate Library"
+			},
+			{
+				"command": "angular-ng.generate.class",
+				"title": "Ng: Generate Class"
+			},
+			{
+				"command": "angular-ng.generate.guard",
+				"title": "Ng: Generate Guard"
+			},
+			{
+				"command": "angular-ng.generate.enum",
+				"title": "Ng: Generate Enum"
+			},
+			{
+				"command": "angular-ng.generate.module",
+				"title": "Ng: Generate Module"
+			},
+			{
+				"command": "angular-ng.generate.pipe",
+				"title": "Ng: Generate Pipe"
+			},
+			{
+				"command": "angular-ng.generate.service-worker",
+				"title": "Ng: Generate Service Worker"
+			},
+			{
+				"command": "angular-ng.generate.web-worker",
+				"title": "Ng: Generate Web Worker"
+			},
+			{
+				"command": "angular-ng.add",
+				"title": "Ng: Add A Package"
+			},
+			{
+				"command": "angular-ng.build",
+				"title": "Ng: Build Package"
+			},
+			{
+				"command": "angular-ng.server.start",
+				"title": "Ng: Start Server"
+			},
+			{
+				"command": "angular-ng.server.stop",
+				"title": "Ng: Stop Server"
+			},
+			{
+				"command": "angular-ng.test",
+				"title": "Ng: Run Tests"
+			},
+			{
+				"command": "angular-ng.search-docs",
+				"title": "Ng: Search Docs"
+			}
+		],
+		"configuration": {
+			"title": "Angular Ng CLI",
+			"properties": {
+				"angular-ng.generate.location.component": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new components."
+				},
+				"angular-ng.generate.location.service": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new services."
+				},
+				"angular-ng.generate.location.directive": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new directive."
+				},
+				"angular-ng.generate.location.pipe": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new pipes."
+				},
+				"angular-ng.generate.location.enum": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new enums."
+				},
+				"angular-ng.generate.location.guard": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new guard."
+				},
+				"angular-ng.generate.location.interface": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new interfaces."
+				},
+				"angular-ng.generate.location.module": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new modules."
+				},
+				"angular-ng.generate.location.class": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new classes."
+				},
+				"angular-ng.generate.location.interceptor": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new interceptor."
+				},
+				"angular-ng.generate.location.serviceWorker": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new interceptor."
+				},
+				"angular-ng.generate.location.webWorker": {
+					"type": "string",
+					"default": "",
+					"description": "The default location to save new interceptor."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.47.0",
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"eslint": "^6.8.0",
+		"@typescript-eslint/parser": "^2.30.0",
+		"@typescript-eslint/eslint-plugin": "^2.30.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0"
+	}
+}
