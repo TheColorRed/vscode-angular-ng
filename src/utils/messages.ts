@@ -1,8 +1,7 @@
 import { window } from 'vscode'
 
-export async function showMessage(message: string) {
-  window.showInformationMessage(message)
-  return true
+export function showMessage(message: string, ...actions: string[]) {
+  return window.showInformationMessage(message, ...actions)
 }
 
 export async function showError(message: string, consoleErr?: Error) {

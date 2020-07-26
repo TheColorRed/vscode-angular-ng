@@ -1,6 +1,8 @@
-import { commands, ExtensionContext, window } from 'vscode'
+import { kill } from 'process'
+import { commands, ExtensionContext, Terminal, window } from 'vscode'
 import { Add } from './commands/add/add'
 import { Build } from './commands/build/build'
+import { Deploy } from './commands/deploy/Deploy'
 import { SearchDoc } from './commands/doc/SearchDoc'
 import { Class } from './commands/generate/Class'
 import { Component } from './commands/generate/Component'
@@ -41,15 +43,29 @@ export function activate(context: ExtensionContext) {
 	context.subscriptions.push(commands.registerCommand('angular-ng.server.stop', () => new Serve().stop()))
 	context.subscriptions.push(commands.registerCommand('angular-ng.test', () => new Tests().run()))
 	context.subscriptions.push(commands.registerCommand('angular-ng.search-docs', () => new SearchDoc().run()))
+	context.subscriptions.push(commands.registerCommand('angular-ng.deploy', () => new Deploy().run()))
 
 
-	window.onDidCloseTerminal(t => {
+	window.onDidCloseTerminal(async t => {
 		// Watch for when the server terminal closes.
 		if (t.name === Serve.terminalName) {
+			await killProcess(Serve.server)
 			Serve.server = undefined
 			showMessage(`The server has been stopped on "http://${Serve.host}:${Serve.port}"`)
 		}
+		// Watch for when the add package terminal closes.
+		else if (t.name === Add.terminalName) {
+			await killProcess(Add.terminal)
+			Add.terminal = undefined
+		}
 	})
+}
+
+async function killProcess(terminal?: Terminal) {
+	if (terminal) {
+		const id = await terminal.processId
+		id && kill(id)
+	}
 }
 
 export function deactivate() { }

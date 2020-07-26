@@ -2,7 +2,7 @@
 	"name": "angular-ng",
 	"displayName": "Angular CLI Commands",
 	"description": "Run Angular ng commands within Visual Studio Code",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"publisher": "ryannaddy",
 	"icon": "images/angularcli.png",
 	"engines": {
@@ -105,6 +105,10 @@
 			{
 				"command": "angular-ng.search-docs",
 				"title": "Ng: Search Docs"
+			},
+			{
+				"command": "angular-ng.deploy",
+				"title": "Ng: Deploy"
 			}
 		],
 		"configuration": {

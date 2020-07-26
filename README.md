@@ -9,10 +9,14 @@ Run Angular Ng commands from within Visual Studio Code
 * Run tests
 * Search the documentation
 * Add packages that support schematics
+* Build
+* Deploy
+
+![Command List](images/command-list.png)
 
 ## Requirements
 
-This package requires that the angular cli is installed globally
+This package requires that the `@angular/cli` is installed globally
 
 ```
 npm i -g @angular/cli

@@ -10,6 +10,6 @@ export class Tests extends Command {
       watchForChanges ? '--watch' : ''
     ]
 
-    this.execTerminal('Angular Ng Test', command.join(' '))
+    this.execTerminal('Angular Ng Test', command)
   }
 }
